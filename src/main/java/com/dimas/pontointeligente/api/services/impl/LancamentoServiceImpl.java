@@ -32,7 +32,8 @@ public class LancamentoServiceImpl implements LancamentoService {
 	@Cacheable("lancamentoPorId")
 	public Optional<Lancamento> buscarPorId(Long id) {
 		log.info("Buscando um lançamento pelo ID {}", id);
-		return Optional.ofNullable(this.lancamentoRepository.getOne(id));
+		//return Optional.ofNullable(this.lancamentoRepository.getOne(id));
+		return Optional.ofNullable( this.getLancamentoById(id) );
 	}
 	
 	@CachePut("lancamentoPorId")
@@ -45,5 +46,22 @@ public class LancamentoServiceImpl implements LancamentoService {
 		log.info("Removendo o lançamento ID {}", id);
 		this.lancamentoRepository.deleteById(id);
 	}
+	
+	/*In springBoot 2.0, the return value of findById(id) is Optional<Lancamento>
+	 Optional is a wrapper class that wraps the user. If the get() method is returned when returning User, an exception will occur if it is empty. So first deal with the exception*/
+
+	public Lancamento getLancamentoById(Long id) {
+
+		Lancamento lancamento =lancamentoRepository.getOne(id);
+	       Optional<Lancamento> optionalLancamento = lancamentoRepository.findById(id);
+	       try{
+	    	   log.info("tentando getLancamento", id);
+	    	   optionalLancamento.get();
+	       }catch (Exception ex){
+	           return null;
+	       }
+	       return optionalLancamento.get();
+	    }
+	 /*This will not cause problems when processing data*/
 
 }

@@ -6,3 +6,6 @@ INSERT INTO `funcionario` (`id`, `cpf`, `data_atualizacao`, `data_criacao`, `ema
 VALUES (NULL, '16248890935', CURRENT_DATE(), CURRENT_DATE(), 'admin@dimas.com', 'ADMIN', 'ROLE_ADMIN', NULL, NULL, 
 '$2a$06$xIvBeNRfS65L1N17I7JzgefzxEuLAL0Xk0wFAgIkoNqu9WD6rmp4m', NULL, 
 (SELECT `id` FROM `empresa` WHERE `cnpj` = '82198127000121'));
+
+
+

@@ -90,11 +90,11 @@ public class FuncionarioController {
 			funcionario.setEmail(funcionarioDto.getEmail());
 		}
 
-		//funcionario.setQtdHorasAlmoco(null);
+		funcionario.setQtdHorasAlmoco(null);
 		funcionarioDto.getQtdHorasAlmoco()
 				.ifPresent(qtdHorasAlmoco -> funcionario.setQtdHorasAlmoco(Float.valueOf(qtdHorasAlmoco)));
 
-		//funcionario.setQtdHorasTrabalhoDia(null);
+		funcionario.setQtdHorasTrabalhoDia(null);
 		funcionarioDto.getQtdHorasTrabalhoDia()
 				.ifPresent(qtdHorasTrabDia -> funcionario.setQtdHorasTrabalhoDia(Float.valueOf(qtdHorasTrabDia)));
 

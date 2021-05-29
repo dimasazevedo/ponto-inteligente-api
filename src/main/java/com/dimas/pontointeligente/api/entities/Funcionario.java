@@ -37,8 +37,8 @@ public class Funcionario implements Serializable{
 	private String senha;
 	private String cpf;
 	private BigDecimal valorHora;
-	private float qtdHorasTrabalhoDia;
-	private float qtdHorasAlmoco;
+	private Float qtdHorasTrabalhoDia;
+	private Float qtdHorasAlmoco;
 	private PerfilEnum perfil;
 	private Date dataCriacao;
 	private Date dataAtualizacao;
@@ -121,7 +121,7 @@ public class Funcionario implements Serializable{
 		
 	}
 
-	public void setQtdHorasTrabalhoDia(float qtdHorasTrabalhoDia) {
+	public void setQtdHorasTrabalhoDia(Float qtdHorasTrabalhoDia) {
 		this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
 	}
 
@@ -136,7 +136,7 @@ public class Funcionario implements Serializable{
 		
 	}
 
-	public void setQtdHorasAlmoco(float qtdHorasAlmoco) {
+	public void setQtdHorasAlmoco(Float qtdHorasAlmoco) {
 		this.qtdHorasAlmoco = qtdHorasAlmoco;
 	}
 
